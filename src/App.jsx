@@ -15,7 +15,7 @@ function App() {
   }, []);
   let onClick = (e) => {
     e.preventDefault();
-    setCount((prev) => prev + 1);
+    setCount(Math.floor(Math.random() *( meme.length)));
   };
   function onChange(e) {
     if (e.target.name == "top") {
