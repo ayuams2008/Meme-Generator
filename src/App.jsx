@@ -6,6 +6,8 @@ import Form from "./components/form";
 function App() {
   const [count, setCount] = useState(0);
   const [meme, setMeme] = useState();
+  const [top, setTop] = useState("haa bhai");
+  const [bot, setBot] = useState("aa gya swad");
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((res) => res.json())
@@ -15,10 +17,23 @@ function App() {
     e.preventDefault();
     setCount((prev) => prev + 1);
   };
+  function onChange(e) {
+    if (e.target.name == "top") {
+      setTop(e.target.value);
+    } else {
+      setBot(e.target.value);
+    }
+  }
   return (
     <>
       <Header />
-      <Form img={meme ? meme[count] : ""} handleClick={onClick} />
+      <Form
+        img={meme ? meme[count] : ""}
+        handleClick={onClick}
+        top={top}
+        bot={bot}
+        fn={onChange}
+      />
     </>
   );
 }
