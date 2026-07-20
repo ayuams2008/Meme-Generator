@@ -2,9 +2,10 @@
   margin: 0;
   outline: none;
   border: none;
+  font-family: "Varela Round";
 }
 body{
-  display: flex;
+  display: flex;  
   justify-content: center;
   background-color: rgb(15, 14, 36);
 }
